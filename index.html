@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			height: 96%;
+		}
+		.bg{
+	        width: 100%;
+	        height: 100vh;
+	        z-index: -1;
+	        background: url('back.jpg');
+	        background-size: cover; 
+	        animation: back 28s linear infinite;
+	        position: fixed;
+}
+		}
+		@keyframes back {
+			100%{background-position-x: -1365px;}
+		} 
+		.road{
+			width: 1366px;
+			height: 100px;
+			top: 540px;
+			background: #454750;
+			transform: perspective(180px)rotateX(40deg);
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+		}
+		.line{
+			height: 10px;
+			width: 100%;
+			background: linear-gradient(90deg,#fff,#fff 50%,transparent 50%, transparent 100%);
+			background-size: 180px;
+			transition: 2s;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			animation: linee 0.125s linear infinite;
+			transform: perspective(180px)rotateX(40deg);
+		}
+		@keyframes linee{
+			0%{background-position: 200px 0;}
+		}
+		.car{
+			margin-top: 499px;
+			width: 380px;
+			position: absolute;
+			z-index: 1;
+		}
+		.carbox{
+			animation: car 8s linear infinite;
+			z-index: 30;
+			position: absolute;
+		}
+		@keyframes car{
+			0%{transform: translateX(-600px);}
+			100%{transform: translateX(1400px);}
+		}
+		.tire{
+			margin-top: 551px;
+			margin-left: 39px;
+			width: 62px;
+			position: absolute;
+			z-index: 2;
+			animation: tire 1.1s linear infinite;
+		}
+		.tire2{
+			margin-top: 550px;
+			margin-left: 282px;
+			width: 62px;
+			position: absolute;
+			z-index: 2;
+			animation: tire 1.1s linear infinite;
+		}
+		@keyframes tire{
+			100%{transform: rotate(360deg);}
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="bg" id="bg"></div>
+	<div class="carbox" id="carbox">
+		<img class="car" src="car.png" 
+
+
+		onclick="document.getElementById('line').style.animationPlayState = 'paused';
+		 		 document.getElementById('carbox').style.animationPlayState = 'paused';
+			 	 document.getElementById('tire').style.animationPlayState = 'paused';
+			 	 document.getElementById('tire2').style.animationPlayState = 'paused';
+                 document.getElementsById('bg').style.animationPlayState = 'paused';">
+
+
+		 <img class="tire" src="tire.png" id="tire" 
+		 onclick="document.getElementById('line').style.animationPlayState = 'running';
+		 		 document.getElementById('carbox').style.animationPlayState = 'running';
+			 	 document.getElementById('tire').style.animationPlayState = 'running';
+			 	 document.getElementById('tire2').style.animationPlayState = 'running';
+                 document.getElementsById('bg').style.animationPlayState = 'running';">
+		<img class="tire2" src="tire.png" id="tire2"
+		 onclick="document.getElementById('line').style.animationPlayState = 'running';
+		 		 document.getElementById('carbox').style.animationPlayState = 'running';
+			 	 document.getElementById('tire').style.animationPlayState = 'running';
+			 	 document.getElementById('tire2').style.animationPlayState = 'running';
+                 document.getElementsById('bg').style.animationPlayState = 'running';">
+	</div>
+	<div class="road">
+		<div class="line" id="line"></div>
+	</div>
+
+
+
+
+
+
+
+	<!-- <script type="text/javascript">
+		function stopCar() {
+		var line = document.getElementById('line');
+		var car = document.getElementById('car');
+		var tire = document.getElementById('tire');
+		var Bg= document.getElementsByTagName('body');
+
+		line.style.animationPlaystate = 'paused'
+		car.style.animationPlaystate = 'paused'
+		tire.style.animationPlaystate = 'paused'
+		bg.style.animationPlaystate = 'paused'
+		}
+	</script> -->
+
+
+
+
+
+
+
+
+</body>
+</html>
